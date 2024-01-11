@@ -1,0 +1,51 @@
+def welcome_message():
+  print("Welcome to the Chatbot!")
+  print("----------------------------")
+
+def collect_user_info():
+  name = input("What's your name? ")
+  age = input("How old are you? ")
+  return name, age
+
+def show_menu():
+  print("\nChoose an option:")
+  print("1. ph 1 - ph response")
+  print("2. ph 2 - ph response")
+  print("3. ph 3 - ph response")
+  print("4. ph 4 - ph response")
+  print("5. ph 5 - ph response")
+  print("6. Exit")
+
+def ask_for_assistance():
+  return input("How can I assist you today? ")
+
+def handle_option(option):
+  if option == '1':
+      print("You chose Option 1. ph response.")
+  elif option == '2':
+      print("You chose Option 2. ph response.")
+  elif option == '3':
+      print("You chose Option 3. ph response.")
+  elif option == '4':
+      print("You chose Option 4. ph response.")
+  elif option == '5':
+      print("You chose Option 5. ph response.")
+  elif option == '6':
+      exit_conversation()
+  else:
+      print("Invalid option. Please choose a valid option.")
+
+def exit_conversation():
+  print("Goodbye! Thank you for using the Chatbot.")
+  quit()
+
+welcome_message()
+
+user_name, user_age = collect_user_info()
+
+while True:
+  assistance_query = ask_for_assistance()
+  show_menu()
+  user_choice = input("Enter your choice (1-6): ")
+  handle_option(user_choice)
+  print("Chatbot: ph response to assist:", assistance_query)
